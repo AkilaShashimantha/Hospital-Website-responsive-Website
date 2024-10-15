@@ -4,7 +4,8 @@ session_start();
 require_once 'connection.php';
 
 // Function to sanitize input data
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
@@ -50,11 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Hospital Payment</title>
-    <style>
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--  <style>
         /* Inline CSS for simplicity */
         body {
             font-family: Arial, sans-serif;
@@ -113,15 +120,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-top: 15px;
         }
     </style>
+
+-->
+
 </head>
+
 <body>
-    <div class="container">
+
+    <!--  <div class="container">
         <h2>Login</h2>
-        <?php
-            if (!empty($general_err)) {
-                echo "<p class='error'>$general_err</p>";
-            }
-        ?>
+ 
         <form action="login.php" method="POST">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
@@ -135,5 +143,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <p>Don't have an account? <a href="register.php">Register here</a>.</p>
     </div>
+
+        -->
+
+    <div class=" container-fluid">
+        <div class="row">
+
+            <?php include "header.php"; ?>
+            <hr class=" mt-0 my-4">
+
+
+            <div class="col-12 d-flex justify-content-center">
+
+                <div class="col-lg-4 col-8 border-3 p-4 my-4" style="background-image: linear-gradient(to right top, #e7edf4, #d6e6f5, #c3e0f6, #aedaf7, #95d4f6); border-radius: 10px;">
+
+                    <div class="col-12 d-flex justify-content-center uText my-2">User Login</div>
+
+                    <?php
+                    if (!empty($general_err)) {
+                        echo "<p class='error'>$general_err</p>";
+                    }
+                    ?>
+
+<form action="login.php" method="POST">
+
+
+<div class="col-12 d-flex justify-content-center my-1"><input type="email" name="email" id="email" class=" form-control" value="<?php echo htmlspecialchars($email); ?>" placeholder="Enter your Email" required></div>
+<div class=" col-12 d-flex justify-content-center my-2"> <span class="error"><?php echo $email_err; ?></span></div>
+
+<div class=" col-12 d-flex justify-content-center my-1"><input type="password" name="password" id="password" class=" form-control" placeholder="Enter Your Password" required></div>
+<div class=" col-12 d-flex justify-content-center my-2"><span class="error"><?php echo $password_err; ?></span></div>
+
+<div class=" col-12 d-flex justify-content-center my-2"><button type="submit" class=" btn btn-outline-primary">Login</button></div>
+
+<div class=" col-12 d-flex justify-content-center my-2"><p>Don't have an account? <a href="register.php" class=" link-primary">Register here</a>.</p></div>
+</form>
+
+                </div>
+
+            </div>
+
+            <?php include "footer.php"; ?>
+
+        </div>
+    </div>
+
+
 </body>
+
 </html>

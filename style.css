@@ -348,3 +348,9 @@ src: url("font/Tropikal-Bold.ttf");
     color: #f2f2f2;
 }
 
+.uText{
+    font-family: "Leiko-Regular";
+    font-size: 20px;
+
+}
+
