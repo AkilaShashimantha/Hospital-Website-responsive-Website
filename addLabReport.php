@@ -123,6 +123,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
     <title>Lab Report Manager</title>
     <style>
         body {
@@ -130,6 +134,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
+        }
+        h1{
+            margin-top: 20px;
+            margin-bottom: 30px;
         }
         .container {
             width: 50%;
@@ -227,65 +235,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
+
+
 <div class="container">
-    <h2>Lab Report Manager</h2>
+<div class="col-12 d-flex justify-content-center">
+  <img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-2 col-4">
+</div>
+    
+<div class="col-12 d-flex justify-content-center">
+    <h1 style="font-family: 'Roboto', sans-serif; font-weight: 700;">Lab Report Manager</h1>
+</div>
 
 
 
-    <div class=" container-fluid">
-        <div class=" row">
+    <?php
+    if (!empty($errors)) {
+        echo '<div class="error"><ul>';
+        foreach ($errors as $error) {
+            echo '<li>' . htmlspecialchars($error) . '</li>';
+        }
+        echo '</ul></div>';
+    }
 
-            <?php include "header.php"; ?>
-            <hr class=" my-0">
+    if (!empty($success)) {
+        echo '<div class="success">' . htmlspecialchars($success) . '</div>';
+    }
+    ?>
 
-            <div class="col-12 mt-2 my-2">
-
-                <div class="col-2">
-
-
-                    <button class="btn btn-dark p-2" onclick="window.location.href='adminHome.php';">
-                        <i class="bi bi-arrow-left-square-fill col-1 mx-1"></i>Back
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="col-12 d-flex justify-content-center">
-
-                <div class="col-lg-4 col-8 my-5 border-2" style="background-image: linear-gradient(to right top, #f3f3f3, #f0f1f5, #ecf0f7, #e5eff9, #ddeffa); border-radius: 10px; box-shadow: 0 0 15px rgba(45, 0, 65, 0.2);">
-
-                    <div class="col-12 d-flex justify-content-center my-2">
-                        <img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-2 col-4">
-                    </div>
-
-                    <div class="col-12 d-flex justify-content-center">
-                        <p style="font-family: 'Leiko-Regular';">Add Lab Report</p>
-                    </div>
-
-                    <div class="col-12 d-flex justify-content-center my-2">
-                        <button class="col-5 btn btn-outline-dark" onclick="window.location.href='labReportForm.php';">Upload Report</button>
-                    </div>
-
-                    <div class="col-12 d-flex justify-content-center my-2">
-                        <button class="col-5 btn btn-outline-dark" onclick="window.location.href='updateReport.php';">Update Report</button>
-                    </div>
-
-                    <div class="col-12 d-flex justify-content-center my-2">
-                        <button class="col-5 btn btn-outline-dark" onclick="window.location.href='deleteReport.php';">Delete Report</button>
-                    </div>
-
-                </div>
-            </div>
-
-
-        
-
-
-
-
-
-        <?php include "footer.php"; ?>
-    </div>
+    <div class="buttons">
+        <button onclick="showForm('upload')">Upload Report</button>
+        <button onclick="showForm('update')">Update Report</button>
+        <button class="delete" onclick="showForm('delete')">Delete Report</button>
     </div>
 
     <div id="upload-form" class="form-section">
@@ -326,9 +306,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 </body>
-</html>
-
-
-</body>
-
 </html>
