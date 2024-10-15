@@ -45,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     
    
+} else {
+    echo "No form data received.";
+
+}
     
     
     
@@ -208,9 +212,5 @@ if ($payment_method == 'Credit/Debit Card') {
 }
 
 
-} else {
-    echo "No form data received.";
-
-}
 
 ?>
