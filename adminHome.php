@@ -15,7 +15,7 @@
             <?php include "header.php"; ?>
             <hr class=" my-0">
 
-            <div class="col-12 col-lg-12 pt-1 px-0 text-light mx-0 p-0" style="background-image: linear-gradient(to right top, #002652, #033768, #054a7f, #055d96, #0071ad);">
+            <div class="col-12 col-lg-12 pt-1  text-light mx-0 p-1 d-flex justify-content-center" style="background-image: linear-gradient(to right top, #002652, #033768, #054a7f, #055d96, #0071ad);">
 
                 <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background-image: radial-gradient(circle, #001436, #00375f, #005e87, #0088aa, #01b4c8);" onclick="changeView1();">Appointment Details</button>
                 <button class=" col-2 btn btn-light text-light btn-btn-outline-light my-2" style="background-image: radial-gradient(circle, #001436, #00375f, #005e87, #0088aa, #01b4c8);" onclick="changeView2();">Latest News Update</button>
