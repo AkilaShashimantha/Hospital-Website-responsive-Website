@@ -6,6 +6,8 @@ $resultset = Database::search("SELECT * FROM `specialization`");
 $docnic = "";
 $dName = "";
 $dEmail = "";
+$special_id = "";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $dnic = $_POST["dnic"];
@@ -122,9 +124,9 @@ else{
 
                             </select>
                         </div>
-                        <button class="btn btn-dark col-3 mx-3" name="add" type="submit">Add Doctor</button>
-                        <button class="btn btn-dark col-3 mx-2" name="update" type="button" onclick="doctorUpdate();">Update Doctor</button>
-                        <button class="btn btn-dark col-3 mx-3" name="delete" type="button" onclick="deleteDoctor();">Delete Doctor</button>
+                        <button class="btn btn-outline-primary  col-3 mx-3" name="add" type="submit">Add Doctor</button>
+                        <button class=" btn btn-outline-primary  col-3 mx-2 " name="update" type="button" onclick="doctorUpdate();">Update Doctor</button>
+                        <button class=" btn btn-outline-primary  col-3 mx-3" name="delete" type="button" onclick="deleteDoctor();">Delete Doctor</button>
                     </form>
                    
                 </div>

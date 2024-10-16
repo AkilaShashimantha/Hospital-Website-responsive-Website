@@ -12,7 +12,7 @@ try {
     Database::iud($query, [$nic, $dname, $email, $speciality], "sssi");
 
     echo "<script>alert(Data added successfully');</script>";
-    header("Location: adminHome.php");
+    header("Location: addDoctor.php");
     exit();
 } catch (Exception $e) {
     die("Error: " . $e->getMessage());
