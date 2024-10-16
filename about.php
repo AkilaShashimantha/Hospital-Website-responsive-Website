@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
 
     <title>About Us</title>
+    <link rel="icon" href="images/hospital logo.png" type="image/png">
+    
 </head>
 
 <body>

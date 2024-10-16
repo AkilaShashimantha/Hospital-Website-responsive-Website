@@ -96,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Lab Report Upload</title>
+    <link rel="icon" href="images/hospital logo.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;

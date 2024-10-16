@@ -11,6 +11,7 @@ session_destroy();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logged Out - Hospital Payment</title>
+    <link rel="icon" href="images/hospital logo.png" type="image/png">
     <style>
         /* Inline CSS for simplicity */
         body {

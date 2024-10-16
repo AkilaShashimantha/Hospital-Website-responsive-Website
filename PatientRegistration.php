@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Registration</title>
-
+    <link rel="icon" href="images/hospital logo.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
