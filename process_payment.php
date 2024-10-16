@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
         
-        echo "success";
+    
     
 
     } else {
@@ -155,27 +155,28 @@ try {
     exit();
 }
 
-// Process payment based on the method
+
 if ($payment_method == 'Credit/Debit Card') {
-    // **IMPORTANT:** Integrate with a payment gateway like Stripe or PayPal here.
-    // For demonstration, we'll simulate a successful payment.
+   
 
     // Update payment status to 'Completed'
     $update_query = "UPDATE payments SET status = ? WHERE transaction_id = ?";
     $update_params = ['Completed', $transaction_id];
     $update_types = "ss";
 
+
     try {
         Database::iud($update_query, $update_params, $update_types);
     } catch (Exception $e) {
         $_SESSION['payment_error'] = "Error updating payment status: " . $e->getMessage();
+        echo "<script>alert('Appointment Successfull');</script>";
         header("Location: payment.php");
         exit();
     }
 
 
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: AppointmentSearch.php");
+    header("Location: appointmentRecieptShow.php");
     exit();
 
 
@@ -186,7 +187,7 @@ if ($payment_method == 'Credit/Debit Card') {
     // For demonstration, we'll simulate redirection.
 
     $_SESSION['payment_success'] = "Redirecting to PayPal for payment...";
-    header("Location: AppointmentSearch.php");
+    header("Location: appointmentRecieptShow.php");
     exit();
 
 } else {
@@ -194,7 +195,7 @@ if ($payment_method == 'Credit/Debit Card') {
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
 
 
-    header("Location: AppointmentSearch.php");
+    header("Location: appointmentRecieptShow.php");
     exit();
 }
 

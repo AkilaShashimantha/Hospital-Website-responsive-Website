@@ -179,6 +179,34 @@ height: 10vh;
     font-weight: 500;
 }
 
+
+.c-img-1 {
+    position: relative;
+}
+
+.c-img1-text {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-40%, -60%);
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .c-img1-text {
+        
+        left: 65%;
+        transform: translate(-40%, -40%);
+        font-size: 22px; /* Adjust font size for smaller screens if needed */
+        text-align: left; /* Align text to the left if necessary */
+    }
+}
+
 /* Flexbox container for form and image */
 .content-container {
     display: flex;

@@ -129,35 +129,48 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
                 <div class="carousel-item active p-0">
 
-                  <img src="images/img1.jpg" class="d-block w-100" alt="..." >
+                <!--  <img src="images/img1.jpg" class="d-block w-100" alt="..." > -->
 
                   <!--  <div class="image-1-display">
                 <div class="image-1-text">
                   <div class="image-1-title">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
                 </div>
                 </div>-->
+                <div class="col-12 c-img-1">
+                  <div class="c-img1-text ">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
+                <img src="images/img1.jpg" class="d-block w-100" alt="..." > 
+                </div>
 
                 </div>
 
                 <div class="carousel-item">
-                  <img src="images/img2.jpg" class="d-block w-100" alt="...">
+               <!--   <img src="images/img2.jpg" class="d-block w-100" alt="...">-->
 
                   <!--  <div class="image-2-display">
                 <div class="image-2-text">
                   <div class="image-2-title">Caring for the Community, Committed to You</div>
                 </div>
                 </div> -->
+                <div class="col-12 c-img-1">
+                  <div class="c-img1-text ">Caring for the Community, Committed to You</div>
+                <img src="images/img2.jpg" class="d-block w-100" alt="..." > 
+                </div>
 
                 </div>
 
                 <div class="carousel-item">
-                  <img src="images/img3.jpg" class="d-block w-100" alt="...">
+               <!--   <img src="images/img3.jpg" class="d-block w-100" alt="..."> -->
 
                   <!-- <div class="image-3-display">
                 <div class="image-3-text">
                   <div class="image-3-title">Excellence in Healthcare, Every Day. Together for a Healthier Tomorrow!</div>
                 </div>
                 </div> -->
+
+                <div class="col-12 c-img-1">
+                  <div class="c-img1-text ">Caring for the Community, Committed to You</div>
+                <img src="images/img3.jpg" class="d-block w-100" alt="..." > 
+                </div>
 
                 </div>
 
@@ -236,8 +249,8 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
     <script>
      
         function hideWelcomeMessage() {
-            $('#welcomeDiv').fadeOut(); // Fade out the welcome div
-            localStorage.setItem('welcomeMessageSeen', 'true'); // Set seen in localStorage
+            $('#welcomeDiv').fadeOut(); 
+            localStorage.setItem('welcomeMessageSeen', 'true'); 
         }
 
        
@@ -246,10 +259,10 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
             var welcomeMessageSeen = localStorage.getItem('welcomeMessageSeen');
 
             if (!welcomeMessageSeen) {
-                $('#welcomeDiv').show(); // Show welcome div
+                $('#welcomeDiv').show(); 
 
                 setTimeout(function() {
-                    hideWelcomeMessage(); // Hide and mark as seen
+                    hideWelcomeMessage(); 
                 }, 6000);
             }
         });
