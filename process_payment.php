@@ -173,24 +173,11 @@ if ($payment_method == 'Credit/Debit Card') {
         exit();
     }
 
-  /*
+
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: appointmentRecite.php");
-    exit();*/
-
-
-    $url = "appointmentRecite.php?pName=" . urlencode($pName) .
-           "&nic=" . urlencode($nic) .
-           "&email=" . urlencode($email) .
-           "&phone=" . urlencode($phone) .
-           "&gender=" . urlencode($gender) .
-           "&doctor=" . urlencode($doctor) .
-           "&date=" . urlencode($date) .
-           "&appNum=" . urlencode($appNum) .
-           "&transaction_id=" . urlencode($transaction_id);
-
-    header("Location: $url");
+    header("Location: AppointmentSearch.php");
     exit();
+
 
 }
  elseif ($payment_method == 'PayPal') {
@@ -199,7 +186,7 @@ if ($payment_method == 'Credit/Debit Card') {
     // For demonstration, we'll simulate redirection.
 
     $_SESSION['payment_success'] = "Redirecting to PayPal for payment...";
-    header("Location: appointmentRecite.php");
+    header("Location: AppointmentSearch.php");
     exit();
 
 } else {
@@ -207,7 +194,7 @@ if ($payment_method == 'Credit/Debit Card') {
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
 
 
-    header("Location: aappointmentRecite.php");
+    header("Location: AppointmentSearch.php");
     exit();
 }
 
