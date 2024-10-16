@@ -119,7 +119,7 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
       <div style="background-image: linear-gradient(to right top, #f3f3f3, #f4f4f5, #f4f6f8, #f4f7fa, #f4f9fc);">
 
-        <div class="col-12 offset-lg-1 col-lg-10 mt-2" >
+        <div class="col-12 offset-lg-1 col-lg-10 mt-2">
 
           <div class="row">
             <!--  carousel images  Auto scrolling -->
@@ -129,48 +129,31 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
                 <div class="carousel-item active p-0">
 
-                <!--  <img src="images/img1.jpg" class="d-block w-100" alt="..." > -->
-
-                  <!--  <div class="image-1-display">
-                <div class="image-1-text">
-                  <div class="image-1-title">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
-                </div>
-                </div>-->
-                <div class="col-12 c-img-1">
-                  <div class="c-img1-text ">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
-                <img src="images/img1.jpg" class="d-block w-100" alt="..." > 
-                </div>
+                  <div class="col-12 c-img-1">
+                    <div class="c-img1-text ">Where Healing Begins with Heart, Your Trusted Partner in Health</div>
+                    <img src="images/img1.jpg" class="d-block w-100" alt="..." style="position: relative;">
+                    <img src="images/c-img1.jpg" alt="" class="bg-img">
+                  </div>
 
                 </div>
 
                 <div class="carousel-item">
-               <!--   <img src="images/img2.jpg" class="d-block w-100" alt="...">-->
 
-                  <!--  <div class="image-2-display">
-                <div class="image-2-text">
-                  <div class="image-2-title">Caring for the Community, Committed to You</div>
-                </div>
-                </div> -->
-                <div class="col-12 c-img-1">
-                  <div class="c-img1-text ">Caring for the Community, Committed to You</div>
-                <img src="images/img2.jpg" class="d-block w-100" alt="..." > 
-                </div>
+                  <div class="col-12 c-img-1">
+                    <div class="c-img1-text ">Caring for the Community, Committed to You</div>
+                    <img src="images/img2.jpg" class="d-block w-100" alt="..." style="position: relative;">
+                    <img src="images/c-img2.jpg" alt="" class="bg-img2">
+                  </div>
 
                 </div>
 
                 <div class="carousel-item">
-               <!--   <img src="images/img3.jpg" class="d-block w-100" alt="..."> -->
 
-                  <!-- <div class="image-3-display">
-                <div class="image-3-text">
-                  <div class="image-3-title">Excellence in Healthcare, Every Day. Together for a Healthier Tomorrow!</div>
-                </div>
-                </div> -->
-
-                <div class="col-12 c-img-1">
-                  <div class="c-img1-text ">Caring for the Community, Committed to You</div>
-                <img src="images/img3.jpg" class="d-block w-100" alt="..." > 
-                </div>
+                  <div class="col-12 c-img-1">
+                    <div class="c-img3-text ">Caring for the Community, Committed to You</div>
+                    <img src="images/img3.jpg" class="d-block w-100" alt="..."  style="position: relative;">
+                    <img src="images/c-img3.jpg" alt="" class="bg-img3">
+                  </div>
 
                 </div>
 
@@ -203,7 +186,21 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
 
             </div>
 
+            <div class="col-12 mt-2 my-2 mt-lg-3 my-lg-3">
+              <div class="row">
 
+                <div class=" col-12 col-lg-5 p-0 d-flex justify-content-center hover-animate">
+                  <img src="images/h-img1.png" alt="" class="col-9 col-lg-12">
+                </div>
+
+
+                <div class="col-12 col-lg-5 p-0 d-flex justify-content-center mt-2 mt-lg-0 hover-animate2">
+                  <img src="images/h-img2.png" alt="" class="col-9 col-lg-12 offset-lg-10">
+                </div>
+
+              </div>
+
+            </div>
 
             <div class="col-12 my-4">
               <div class="card-group">
@@ -212,9 +209,9 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
                   while ($row = $resultset->fetch_assoc()) {
                 ?>
                     <div class="card" id="<?php echo $row['card_id']; ?>">
-                      <img src="<?php echo $row['image_path']; ?>" class="card-img-top" alt="Card image">
+                      <img src="<?php echo $row['image_path']; ?>" class="card-img-top hover-zoom " alt="Card image">
                       <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['title']; ?></h5>
+                        <h3 class="card-title"><?php echo $row['title']; ?></h3>
                         <p class="card-text"><?php echo $row['text_content']; ?></p>
                         <p class="card-text"><small class="text-body-secondary">Last updated <?php echo $row['last_updated']; ?></small></p>
                       </div>
@@ -230,43 +227,42 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
           </div>
 
 
-   
-    <!-- Welcome Div -->
-    <div id="welcomeDiv" class="welcome-overlay " style="display: none;" onclick="hideWelcomeMessage()">
-        <div class="welcome-message ">
-        <button class="close-btn" onclick="hideWelcomeMessage()">×</button>
-        <div class="col-12 d-flex justify-content-center"><img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-4 col-4"></div>
-            <h1>Welcome to Prime Care Hospital</h1>
-            <p>Your health, our priority.</p>
-        </div>
-    </div>
 
-   
+          <!-- Welcome Div -->
+          <div id="welcomeDiv" class="welcome-overlay " style="display: none;" onclick="hideWelcomeMessage()">
+            <div class="welcome-message ">
+              <button class="close-btn" onclick="hideWelcomeMessage()">×</button>
+              <div class="col-12 d-flex justify-content-center"><img src="https://www.primecareltd.com/uploads/company/logo.png" alt="Hospital Logo" class="col-lg-4 col-4"></div>
+              <h1>Welcome to Prime Care Hospital</h1>
+              <p>Your health, our priority.</p>
+            </div>
+          </div>
 
-   
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-     
-        function hideWelcomeMessage() {
-            $('#welcomeDiv').fadeOut(); 
-            localStorage.setItem('welcomeMessageSeen', 'true'); 
-        }
 
-       
-        $(document).ready(function() {
-          
-            var welcomeMessageSeen = localStorage.getItem('welcomeMessageSeen');
 
-            if (!welcomeMessageSeen) {
-                $('#welcomeDiv').show(); 
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+          <script>
+            function hideWelcomeMessage() {
+              $('#welcomeDiv').fadeOut();
+              localStorage.setItem('welcomeMessageSeen', 'true');
+            }
+
+
+            $(document).ready(function() {
+
+              var welcomeMessageSeen = localStorage.getItem('welcomeMessageSeen');
+
+              if (!welcomeMessageSeen) {
+                $('#welcomeDiv').show();
 
                 setTimeout(function() {
-                    hideWelcomeMessage(); 
+                  hideWelcomeMessage();
                 }, 6000);
-            }
-        });
-    </script>
+              }
+            });
+          </script>
 
 
         </div>
@@ -274,13 +270,13 @@ $resultset = Database::search("SELECT card_id, title, text_content, image_path, 
       </div>
       <hr class=" my-0">
     </div>
-</div>
+  </div>
 
-    <?php include "footer.php"; ?>
+  <?php include "footer.php"; ?>
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

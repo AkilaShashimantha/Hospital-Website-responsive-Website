@@ -36,6 +36,7 @@ pShow.onclick = function () {
 
 }
 
+
 function changeView1() {
 
 

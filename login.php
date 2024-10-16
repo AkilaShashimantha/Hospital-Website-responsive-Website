@@ -61,67 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!--  <style>
-        /* Inline CSS for simplicity */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            width: 400px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .container label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        .container input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            box-sizing: border-box;
-        }
-
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-
-        .container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .container button:hover {
-            background-color: #0056b3;
-        }
-
-        .container p {
-            text-align: center;
-            margin-top: 15px;
-        }
-    </style>
-
--->
 
 </head>
 

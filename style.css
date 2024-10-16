@@ -207,7 +207,164 @@ height: 10vh;
     }
 }
 
-/* Flexbox container for form and image */
+.c-img3-text {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-40%, -60%);
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .c-img3-text {
+        
+        left: 65%;
+        transform: translate(-40%, -40%);
+        font-size: 22px; 
+        text-align: left; 
+    }
+}
+
+.bg-img{
+
+    position: absolute;
+    top: 3vh;
+    right: 0;
+    width: 57%; 
+    opacity: 0.3;
+    z-index: 0;
+
+}
+
+@media (max-width: 768px) {
+    .bg-img{
+
+        position: absolute;
+        top: 1vh;
+        right: 0;
+        width: 57%; 
+        opacity: 0.3;
+        z-index: 0;
+    
+    }
+}
+
+.bg-img2{
+
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 57%; 
+    opacity: 0.3;
+    z-index: 0;
+
+}
+
+@media (max-width: 768px) {
+    .bg-img2{
+
+        position: absolute;
+        top: 3vh;
+        right: 0;
+        width: 57%; 
+        opacity: 0.3;
+        z-index: 0;
+    
+    }
+}
+
+.bg-img3{
+
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 53%; 
+    opacity: 0.3;
+    z-index: 0;
+
+}
+
+@media (max-width: 768px) {
+    .bg-img3 {
+        
+        position: absolute;
+        top: 6vh;
+        right: 0;
+        width: 53%; 
+        opacity: 0.3;
+        z-index: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+ 
+.hover-animate {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .hover-animate:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+  }
+  
+  
+  .hover-animate:hover {
+    transform: scale(1.1) rotate(2deg);
+  }
+  
+  .hover-animate2 {
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .hover-animate2:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+  }
+  
+  
+  .hover-animate2:hover {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  
+
+.hover-zoom {
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  /* Hover effect */
+  .hover-zoom:hover {
+    transform: scale(1.05); 
+  }
+  
+
 .content-container {
     display: flex;
     justify-content: space-between;
@@ -220,21 +377,21 @@ height: 10vh;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Form container styling */
+
 .form-container {
     flex: 1;
     max-width: 400px;
     margin-right: 20px; 
 }
 
-/* Typography */
+
 h1 {
     font-size: 30px;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
-/* Form styling */
+
 .form-control {
     border-radius: 5px;
     padding: 10px;
@@ -248,7 +405,7 @@ h1 {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 
-/* Button styling */
+
 .btn-primary {
     background-color: #0056b3;
     border-color: #0056b3;
@@ -263,7 +420,7 @@ h1 {
     background-color: #003f7d;
 }
 
-/* Image container styling */
+
 .image-container {
     flex: 2;
     display: flex;
@@ -281,9 +438,7 @@ h1 {
 
 
 
- /*<uniquifier>: Use a unique and descriptive class name
- <weight>: Use a value from 100 to 900
-*/
+
 .noto-serif-headName {
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
@@ -329,9 +484,6 @@ src: url("font/Tropikal-Bold.ttf");
 }
 
 
-
-
-/* Welcome Overlay Styling */
 .welcome-overlay {
     position: fixed;
     top: 0;
