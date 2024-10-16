@@ -127,24 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <!--  <div class="container">
-        <h2>Login</h2>
- 
-        <form action="login.php" method="POST">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
-            <span class="error"><?php echo $email_err; ?></span>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            <span class="error"><?php echo $password_err; ?></span>
-
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </div>
-
-        -->
 
     <div class=" container-fluid">
         <div class="row">
