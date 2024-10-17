@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $date = $_POST['date'] ?? '';   // Set date to empty if not provided
 
     if ($dName === "" && $date === "") {
-        $resultset = Database::search("SELECT * FROM `appointment`");
+        $resultset = Database::search("SELECT * FROM `appointment` WHERE `aDate` >= CURDATE()");
     } else {
         $query = "SELECT * FROM `appointment` WHERE 1=1"; // Default query to append conditions
         if ($dName !== "") {
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         $resultset = Database::search($query);
     }
 } else {
-    $resultset = Database::search("SELECT * FROM `appointment`");
+    $resultset = Database::search("SELECT * FROM `appointment` WHERE `aDate` >= CURDATE()");
 }
 
 ?>
