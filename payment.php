@@ -34,6 +34,7 @@ if (isset($_SESSION['payment_error'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Make a Payment - Hospital Payment</title>
+    <link rel="icon" href="images/hospital logo.png" type="image/png">
     <style>
         /* Inline CSS for simplicity */
         body {
@@ -208,7 +209,7 @@ if (isset($_SESSION['payment_error'])) {
                 <p>You will be redirected to PayPal to complete your payment.</p>
             </div>
 
-            <label for="amount">Amount ($)</label>
+            <label for="amount">Amount LKR</label>
             <input type="number" id="amount" name="amount" step="0.01" min="0.01" required>
 
             <button type="submit">Confirm Payment</button>
@@ -273,4 +274,3 @@ if (isset($_SESSION['payment_error'])) {
     
 </body>
 </html>
-

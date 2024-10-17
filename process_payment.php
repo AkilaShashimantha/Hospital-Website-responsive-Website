@@ -1,7 +1,7 @@
 <?php
 // process_payment.php
 session_start();
-require_once 'connection.php';
+require 'connection.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,8 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
         
-        echo "success";
-    
+        $_SESSION['pName'] = $pName;
+        $_SESSION['nic'] = $nic;
+        $_SESSION['email'] = $email;
+        $_SESSION['phone'] = $phone;
+        $_SESSION['gender'] = $gender;
+        $_SESSION['doctor'] = $doctor;
+        $_SESSION['date'] = $date;
+        $_SESSION['appNum'] = $appNum;
+
 
     } else {
         echo "Error: Missing form inputs.";
@@ -45,6 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     
    
+} else {
+    echo "No form data received.";
+
+}
     
     
     
@@ -66,6 +77,7 @@ $amount = floatval($_POST['amount']);
 $user_id = $_SESSION['user_id'];
 
 $transaction_id = uniqid('txn_');
+$_SESSION['transaction_id'] = $transaction_id ;
 $status = 'Pending';
 
 $errors = [];
@@ -151,42 +163,30 @@ try {
     exit();
 }
 
-// Process payment based on the method
+
 if ($payment_method == 'Credit/Debit Card') {
-    // **IMPORTANT:** Integrate with a payment gateway like Stripe or PayPal here.
-    // For demonstration, we'll simulate a successful payment.
+   
 
     // Update payment status to 'Completed'
     $update_query = "UPDATE payments SET status = ? WHERE transaction_id = ?";
     $update_params = ['Completed', $transaction_id];
     $update_types = "ss";
 
+
     try {
         Database::iud($update_query, $update_params, $update_types);
     } catch (Exception $e) {
         $_SESSION['payment_error'] = "Error updating payment status: " . $e->getMessage();
+        echo "<script>alert('Appointment Successfull');</script>";
         header("Location: payment.php");
         exit();
     }
 
-  /*
+
     $_SESSION['payment_success'] = "Payment Successful! Transaction ID: $transaction_id";
-    header("Location: appointmentRecite.php");
-    exit();*/
-
-
-    $url = "appointmentRecite.php?pName=" . urlencode($pName) .
-           "&nic=" . urlencode($nic) .
-           "&email=" . urlencode($email) .
-           "&phone=" . urlencode($phone) .
-           "&gender=" . urlencode($gender) .
-           "&doctor=" . urlencode($doctor) .
-           "&date=" . urlencode($date) .
-           "&appNum=" . urlencode($appNum) .
-           "&transaction_id=" . urlencode($transaction_id);
-
-    header("Location: $url");
+    header("Location: appointmentRecieptShow.php");
     exit();
+
 
 }
  elseif ($payment_method == 'PayPal') {
@@ -195,7 +195,7 @@ if ($payment_method == 'Credit/Debit Card') {
     // For demonstration, we'll simulate redirection.
 
     $_SESSION['payment_success'] = "Redirecting to PayPal for payment...";
-    header("Location: appointmentRecite.php");
+    header("Location: appointmentRecieptShow.php");
     exit();
 
 } else {
@@ -203,14 +203,10 @@ if ($payment_method == 'Credit/Debit Card') {
     $_SESSION['payment_success'] = "Payment recorded! Your payment is being processed. Transaction ID: $transaction_id";
 
 
-    header("Location: aappointmentRecite.php");
+    header("Location: appointmentRecieptShow.php");
     exit();
 }
 
 
-} else {
-    echo "No form data received.";
-
-}
 
 ?>
