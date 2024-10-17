@@ -52,7 +52,7 @@ $gd = "Mr.";
             <p>Patient consulting Doctor:  Dr.'.$doctor.'</P>
             <h4> Your Appointment is booked for : '.$date.'</h4>
             <h4>Your Payment Transaction ID is : </h4> <h4 style="color:blue;">'.$transaction_id.'</h4>
-            <h3>Your Appointment Number is  </h3> <h1> <center>'.$appNum.'<center></h1>
+            <h3>Your Appointment Number is  </h3> <h1> '.$appNum.'</h1>
 
             ';
             // $bodyContent .= '******************';
