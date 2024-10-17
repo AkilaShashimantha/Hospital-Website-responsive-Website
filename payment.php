@@ -209,7 +209,7 @@ if (isset($_SESSION['payment_error'])) {
                 <p>You will be redirected to PayPal to complete your payment.</p>
             </div>
 
-            <label for="amount">Amount ($)</label>
+            <label for="amount">Amount LKR</label>
             <input type="number" id="amount" name="amount" step="0.01" min="0.01" required>
 
             <button type="submit">Confirm Payment</button>

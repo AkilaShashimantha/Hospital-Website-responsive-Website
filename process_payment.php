@@ -1,7 +1,7 @@
 <?php
 // process_payment.php
 session_start();
-require_once 'connection.php';
+require 'connection.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,8 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         Database::iud($query, [$email, $pName, $nic, $doctor, $phone, $appNum, $date], "sssssss");
         
-    
-    
+        $_SESSION['pName'] = $pName;
+        $_SESSION['nic'] = $nic;
+        $_SESSION['email'] = $email;
+        $_SESSION['phone'] = $phone;
+        $_SESSION['gender'] = $gender;
+        $_SESSION['doctor'] = $doctor;
+        $_SESSION['date'] = $date;
+        $_SESSION['appNum'] = $appNum;
+
 
     } else {
         echo "Error: Missing form inputs.";
@@ -70,6 +77,7 @@ $amount = floatval($_POST['amount']);
 $user_id = $_SESSION['user_id'];
 
 $transaction_id = uniqid('txn_');
+$_SESSION['transaction_id'] = $transaction_id ;
 $status = 'Pending';
 
 $errors = [];
