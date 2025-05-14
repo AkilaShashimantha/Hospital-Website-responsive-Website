@@ -82,8 +82,7 @@ Mobile devices
 📞 Contact Us
 Have questions or need support?
 
-📞 Phone: +94112 4445558
-🌐 Website: www.primescarehospital.com
+🌐 Website: https://akilashashimantha.infinityfreeapp.com/
 
 🤝 Contributing
 We welcome contributions! Please fork the repository and create a pull request with your improvements.
