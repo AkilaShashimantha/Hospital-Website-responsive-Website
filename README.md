@@ -1,5 +1,6 @@
 
-![web1](https://github.com/user-attachments/assets/eedb6826-b201-4449-ba28-0fcf2638937a)
+![Screenshot 2025-05-14 110359](https://github.com/user-attachments/assets/b74d37f8-6d32-4271-a4b5-5dbcd1c8748f)
+
 
 🌟 Prime Care Hospital - Responsive Website
 Prime Care Hospital Banner
@@ -15,7 +16,8 @@ Backend: PHP
 
 Database: MySQL
 
-![Screenshot 2025-05-14 104507](https://github.com/user-attachments/assets/c74b9dd5-f5f9-4b22-a7fd-eb0b5a2e60bb)
+![Screenshot 2025-05-14 104418](https://github.com/user-attachments/assets/785bfb82-6c7b-4290-9ab7-e9f1dacf5114)
+
 
 ![Screenshot 2025-05-14 104507](https://github.com/user-attachments/assets/79a89648-1ad1-48a5-bcb1-0019190f58d5)
 
